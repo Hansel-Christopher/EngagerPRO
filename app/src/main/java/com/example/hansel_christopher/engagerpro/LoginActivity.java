@@ -52,18 +52,20 @@ public class LoginActivity extends AppCompatActivity {
                     String Email = editTextEmail.getText().toString();
                     String Password = editTextPassword.getText().toString();
 
-                    if(Email.equalsIgnoreCase("admin")){
-                        Intent myIntent = new Intent(LoginActivity.this, AdminActivity.class);
+                    if(Email.equalsIgnoreCase("admin@gmail.com")){
+//                        Intent myIntent = new Intent(LoginActivity.this, AdminActivity.class);
+                        Intent myIntent = new Intent(LoginActivity.this, SelectionActivity.class);
                         startActivity(myIntent);
                     }else {
 
                         //Authenticate user
                         User currentUser = sqliteHelper.Authenticate(new User(null, null, Email, Password));
-                        String id = currentUser.id.toString();
-                        String name = currentUser.userName.toString();
-                        String email = currentUser.email.toString();
+
                         //Check Authentication is successful or not
                         if (currentUser != null) {
+                            String id = currentUser.id.toString();
+                            String name = currentUser.userName.toString();
+                            String email = currentUser.email.toString();
                             Log.v("id: ",id);
                             SharedPreferences sp=getSharedPreferences("Login", MODE_PRIVATE);
                             SharedPreferences.Editor Ed=sp.edit();
@@ -82,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
                         } else {
 
                             //User Logged in Failed
-                            Snackbar.make(buttonLogin, "Failed to log in , please try again", Snackbar.LENGTH_LONG).show();
+                            Snackbar.make(buttonLogin, "Invalid credentials , please try again", Snackbar.LENGTH_LONG).show();
 
                         }
                     }

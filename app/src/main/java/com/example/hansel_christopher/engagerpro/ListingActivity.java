@@ -42,7 +42,8 @@ public class ListingActivity extends AppCompatActivity  {
         userName.setText("Welcome back, "+ unm);
         FloatingActionButton floatingActionButton =
                 (FloatingActionButton) findViewById(R.id.floating_action_button);
-
+        FloatingActionButton help =
+                (FloatingActionButton) findViewById(R.id.floating_action_button2);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,7 +51,13 @@ public class ListingActivity extends AppCompatActivity  {
                 startActivity(myIntent);
             }
         });
-
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ListingActivity.this, InfoActivity.class);
+                startActivity(myIntent);
+            }
+        });
         ArrayList<String> animalNames = new ArrayList<>();
 
 

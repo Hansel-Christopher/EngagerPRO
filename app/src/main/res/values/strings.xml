@@ -10,14 +10,38 @@
     <string name="text_label_1">Register a Complaint</string>
     <string name="text_label_2">View all Complaints</string>
     <string name="hint_resource">Available Departments</string>
+
+    <string name="hint_issues">Known issues:</string>
+    <string name="applink1">
+    <a href="https://jalshakti-ddws.gov.in/">Sanitation</a>
+    </string>
+    <string name="applink2">
+    <a href="https://morth.nic.in/">Road Facilities</a>
+    </string>
+    <string name="applink3">
+    <a href="https://www.google.com">Street Lamps</a>
+    </string>
+    <string name="applink4">
+    <a href="https://www.google.com">Mosquito sprays</a>
+    </string>
+    <string name="applink5">
+    <a href="https://www.google.com">Public toilet facilities</a>
+    </string>
     <string-array name="planets_array">
+        <item>Select a department</item>
         <item>Sanitation</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+        <item>Road Facilities</item>
+        <item>Street Lamps</item>
+        <item>Mosquito sprays</item>
+        <item>Public toilet facilities</item>
     </string-array>
+    <string-array name="sanitation_array">
+        <item>Select an issue</item>
+        <item>Pipeline broken</item>
+        <item>Drainage open</item>
+        <item>Garbage not collected</item>
+        <item>Improper disposal of biodegradable waste</item>
+        <item>Public toilets not cleaned</item>
+    </string-array>
+
 </resources>

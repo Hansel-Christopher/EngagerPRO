@@ -43,11 +43,24 @@
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_action_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:backgroundTint="#FB0000"
+        android:src="@drawable/help"
+
+        app:maxImageSize="54dp"
+         />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floating_action_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:src="@drawable/icon_plus"
+
+        app:maxImageSize="54dp"
         app:backgroundTint="@color/colorPrimary" />
 </RelativeLayout>

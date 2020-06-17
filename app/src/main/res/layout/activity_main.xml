@@ -14,36 +14,69 @@
         android:layout_height="150dp"
         android:src="@drawable/image" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/titleField"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Title">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:inputType="text"
-            android:layout_height="wrap_content"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
-        android:text="Department"
+        android:text="Department:"
         android:textSize="16sp" />
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="182dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#ff0000"
         android:overlapAnchor="false"
         android:prompt="@string/hint_resource"
         android:spinnerMode="dialog" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Issue:"
+        android:textSize="16sp" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ff0000"
+        android:overlapAnchor="false"
+        android:prompt="@string/hint_issues"
+        android:spinnerMode="dialog" />
+
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/titleField"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Title">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:inputType="text"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            />-->
+
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/loc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:hint="Location">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:inputType="textMultiLine" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/desc"
@@ -54,7 +87,6 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
             android:inputType="textMultiLine" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -79,26 +111,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Send Email to Authorities?"
+        android:text="Send email to authorities?"
         android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/editTextLocation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+<!--    <TextView-->
+<!--        android:id="@+id/editTextLocation"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content" />-->
 
-    <TextView
-        android:id="@+id/latlong"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="?android:attr/textColorHint">
+<!--    <TextView-->
+<!--        android:id="@+id/latlong"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textColor="?android:attr/textColorHint">-->
 
-    </TextView>
-    <Button
-        android:id="@+id/locationButton"
-        android:layout_width="match_parent"
-        android:layout_height="61dp"
-        android:text="Get location" />
+<!--    </TextView>-->
+<!--    <Button-->
+<!--        android:id="@+id/locationButton"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="61dp"-->
+<!--        android:text="Get location" />-->
     <Button
         android:id="@+id/containedButton"
         android:layout_width="match_parent"

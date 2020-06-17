@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -25,15 +25,18 @@
                 android:id="@+id/welcome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_marginTop="18dp"
                 android:textSize="24sp"
-                android:text="Welcome, Administrator"/>
+                android:textStyle="bold"
+                android:text="Department"/>
             <TextView
                 android:id="@+id/help"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="List of all complaints made:"
-                android:textSize="16sp" />
+                android:textSize="20sp"
+                android:layout_marginBottom="20dp"
+                />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -43,12 +46,22 @@
             android:clipToPadding="false"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/recyclerview_row" />
-        <Button
-            android:id="@+id/containedButton"
-            android:layout_width="match_parent"
-            android:layout_height="61dp"
-            android:text="View Map" />
+<!--        <Button-->
+<!--            android:id="@+id/containedButton"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="61dp"-->
+<!--            android:text="View Map" />-->
 
     </LinearLayout>
 
-</LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:backgroundTint="#4CAF50"
+        android:src="@drawable/tick"
+        app:maxImageSize="38dp"
+        android:tooltipText="Delete" />
+</RelativeLayout>

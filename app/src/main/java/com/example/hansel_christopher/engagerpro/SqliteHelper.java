@@ -39,6 +39,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
     public static final String KEY_DEPT = "dept";
     public static final String KEY_PHONE = "phone";
     public static final String KEY_UID = "uid";
+    public static final String KEY_LOC = "loc";
     private static final String TABLE_TAG = "tags";
 
     //COLUMN password
@@ -58,6 +59,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
             + KEY_TITLE + " TEXT, "
             + KEY_DESC + " TEXT, "
             + KEY_DEPT + " TEXT, "
+            + KEY_LOC + " TEXT, "
             + KEY_PHONE + " INTEGER, "
             + KEY_UID + " TEXT"
             + " ) ";
@@ -122,6 +124,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
         values.put(KEY_DEPT, complaint.dept);
         values.put(KEY_PHONE, complaint.num);
         values.put(KEY_UID, complaint.uid);
+        values.put(KEY_LOC, complaint.loc);
 
         // insert row
         long todo_id = db.insert(TABLE_COMPLAINTS, null, values);
@@ -145,6 +148,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
                 td.setDept(c.getString(c.getColumnIndex(KEY_DEPT)));
                 td.setDescr(c.getString(c.getColumnIndex(KEY_DESC)));
                 td.setUid(c.getString(c.getColumnIndex(KEY_UID)));
+                td.setLoc(c.getString(c.getColumnIndex(KEY_LOC)));
 
                 // adding to todo list
                 todos.add(td);
@@ -194,4 +198,29 @@ public class SqliteHelper extends SQLiteOpenHelper {
         //if email does not exist return false
         return false;
     }
+
+    public boolean deleteComplaint(String id)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_COMPLAINTS, KEY_IDC + "=?", new String[]{id}) > 0;
+    }
+
+    public Complaint getTitle(String id){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(TABLE_COMPLAINTS,// Selecting Table
+                new String[]{KEY_IDC, KEY_TITLE,KEY_UID, KEY_PHONE},//Selecting columns want to query
+                KEY_IDC + "=?",
+                new String[]{id},//Where clause
+                null, null, null);
+        if (cursor != null && cursor.moveToFirst()&& cursor.getCount()>0) {
+            //if cursor has value then in user database there is user associated with this given email
+            Complaint c1 = new Complaint(cursor.getString(0), cursor.getString(1),cursor.getString(2), cursor.getInt(3));
+            return c1;
+        }
+
+        //if user password does not matches or there is no record with that email then return @false
+        return null;
+    }
+
+
 }
